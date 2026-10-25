@@ -1,0 +1,6 @@
+# Minimal local simulator environment; no IQM credentials or QPU packages needed.
+stim==1.16.0
+numpy>=2.4,<3
+pymatching==2.4.0
+scipy>=1.15,<2
+matplotlib>=3.10,<4

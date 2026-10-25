@@ -1,4 +1,12 @@
-# Surface Code on IQM Emerald — Challenge Overview
+# Surface Code on IQM Garnet — Challenge Overview
+
+**Garnet implementation:** the with-reset, distance-3 Qiskit path is executable.
+Start with `python run_garnet.py` for local preparation,
+`--prepare-live` for validation against the authenticated device, and
+`--submit` for explicit paid QPU execution. See [HARDWARE.md](HARDWARE.md)
+for installation, commands, calibration checks, job recovery and decoded results.
+The original challenge also describes larger-device and Qrisp extensions; those
+are separate from the implemented Garnet path.
 
 ## Quantum Error correction - Memory experiment
 
@@ -6,7 +14,7 @@ Quantum computers are fundamentally noise-limited: every gate, every idle moment
 Quantum error correction addresses this by encoding a single logical qubit across many physical qubits and continuously measuring stabilizer operators — parity checks that reveal error syndromes without collapsing the encoded information. 
 Surface codes have emerged as the leading practical approach.
 A surface code is defined, via the number of physical qubits it needs, the distance it covers, and the number of logical qubits.
-They map directly onto the square-lattice connectivity that superconducting processors like IQM Emerald provide.
+They map directly onto the square-lattice connectivity that superconducting processors like IQM Garnet provide.
 Still, writing out a whole a whole pipeline is notoriously hard. 
 The challenge you will be facing today will have you operating on the forefront of science! 
 
@@ -15,8 +23,8 @@ The challenge you will be facing today will have you operating on the forefront 
 You are building and completing a proof-of-concept quantum error correction pipeline that runs a surface code on real superconducting hardware and produces a logical error rate. There are two equal ways of implementing the pipeline, Qiskit and Qrisp and you should pick one. The full chain is:
 
 ```
-Qiskit :  (Stim circuit  →)  Qiskit  →  IQM Emerald (Resonance)  →  Syndrome extraction  →  Decoder  →   P_L(rounds) → fit → LER
-Qrisp  :  (Stim circuit  →)  Qrisp DetectorExperiment  →  IQM Emerald (Resonance)  →  Decoder  →   P_L(rounds) → fit → LER
+Qiskit :  (Stim circuit  →)  Qiskit  →  IQM Garnet (Resonance)  →  Syndrome extraction  →  Decoder  →   P_L(rounds) → fit → LER
+Qrisp  :  (Stim circuit  →)  Qrisp DetectorExperiment  →  IQM Garnet (Resonance)  →  Decoder  →   P_L(rounds) → fit → LER
 ```
 
 Each stage has a clear role. 
@@ -76,33 +84,32 @@ Install everything you should need with the requirements file of this repo: `pip
 
 ### Circuit translation (`stim_to_qiskit.py`, `stim_to_qrisp.py`)
 
-Should you wish to use Stim, the full Stim-to-Qiskit and Stim-to-Qrisp translation layer is implemented. Functionality of `stim_to_qiskit`:
-
-* Stim uses sparse, non-contiguous qubit indices whereas Qiskit requires a contiguous `0..N-1` range, so the converter builds a dense re-indexing map. 
-* strips all noise and annotation instructions (which exist only in Stim's simulation model and have no hardware equivalent), 
-* handles mid-circuit reset by translating Stim's `MR` instruction into a measure-then-reset pair (only relevant for with-reset circuits, since our Emerald cloud quantum computer does not support mid-circuit reset), 
-* preserves measurement order exactly.
-
-`stim_to_detector_experiment` (`stim_to_qrisp.py`) translates a Stim circuit such that it can be embedded as a Qrisp `DetectorExperiment`, including detectors and observables. With `no_reset=True` it disregards the mid-circuit resets and rewrites the detectors accordingly (please verify!).
-
-Neither converter handles X-basis gates (`RX`, `MX`). Extending them can be understood as a part of the challenge.
+The implemented Qiskit converter densely reindexes active Stim qubits and
+preserves every measurement index. It supports Z/X preparation and readout,
+keeps TICKs as barriers, and requires noise to be removed explicitly with
+`without_noise()`. The Garnet path lowers gates to native PRX/CZ first and uses
+measurement-conditioned X for ancilla resets without extra recorded bits.
+The Qrisp converter is an alternative starter and is not used by this hardware path.
 
 ### Simulation baseline (`raw_stim_d3_surface_code.py`)
 
-We provide a d=3 rotated surface code memory experiment in Stim. It models the hardware with uniform noise at circuit level and decodes the syndromes with PyMatching. You can use to first familiarize yourself with how an experiment is written, how to set up decoding and get to an expected LER. The memory experiment uses a with-reset reference: the hardware runs the no-reset variant, so its LER is not directly comparable to your hardware results.
+We provide a d=3 rotated surface code memory experiment in Stim. It models the hardware with uniform noise at circuit level and decodes the syndromes with PyMatching. You can use to first familiarize yourself with how an experiment is written, how to set up decoding and get to an expected LER. This original starter uses uniform noise. For the Garnet execution path, preparation instead saves and samples a matching feedback-reset reference using the downloaded per-qubit noise approximation; see [HARDWARE.md](HARDWARE.md).
 
 ### Syndrome extraction (`extract_syndromes.py`)
 
 This only needed for the Qiskit implementation. The full syndrome extraction step is implemented using Stim's ``compile_m2d_converter()``, which converts raw measurement bitstrings into detection events and observable flips in a single call. If you are working within a pure Qiskit workflow, you can replace this with a manual implementation: detection events are the XOR of consecutive ancilla measurement rounds with reset. Without reset, the XOR of the measurements two rounds apart. (a stabilizer that changes between rounds indicates an error), and the logical observable is recovered from the parity of the final data qubit measurements. Either way, what matters for the decoder is the same output shape: a [shots, num_detectors]-shaped boolean array of detection events and a [shots, num_observables] array of logical outcomes. The dictionary also carries per-shot syndrome weights and per-detector firing rates as diagnostics.
 
-### Hardware execution (*`run_on_hardware.py`*)
+### Hardware execution (`run_garnet.py`, `garnet_hardware.py`, `run_on_hardware.py`)
 
-* `run_qiskit()`: The hardware connection is **almost** ready for you be used. It connects to IQM Resonance via `IQMProvider`, retrieves the backend, transpiles the Qiskit circuit (you should think about whether adjustments in the transpilation step are suitable), submits the job, and converts the returned Qiskit counts dictionary into the numpy array format the syndrome extractor expects. The Qiskit bitstring reversal (Qiskit is right-to-left, Stim is left-to-right) is handled in the helper `counts_to_measurement_array`.
-**Attention here!** Automatic SWAP insertion for pairs that aren't natively adjacent on the hardware grid! You can cirumvent this by writing your own stim/qiskit/qrisp-to-emerald hardware mapping.
+The Garnet Qiskit path prepares, validates, explicitly submits, retrieves,
+extracts syndromes, decodes with MWPM, and fits the per-round LER. It uses the
+saved native-edge placement with routing disabled and ancilla resets enabled.
+Default preparation is offline; `--prepare-live` validates the current calibrated
+architecture without submitting; `--submit` executes paid jobs. Job IDs and
+artifacts are saved for collection after interruption. See [HARDWARE.md](HARDWARE.md).
 
-* `run_qrisp()`: Similarly, the  connects to IQM Resonance via `IQMBackend`. Running the `DetectorExperiment` and collecting the detection events is up to you. Compiler passes do some transpilation for you, but should think about whether adjustments in the transpilation step are suitable `vf2pp_layout` 
-
-Both return the same syndromes dict, so `decode_hardware_results()` works for either implementation. Emerald does not support mid-circuit reset: use the no-reset circuit (`no_reset=True`, the default).
+`run_qiskit()` is the programmatic execution entry point. `run_qrisp()` remains
+unimplemented and raises an error.
 
 ### Utilities (*`internal_helpers.py`*)
 
@@ -131,15 +138,43 @@ Concretely, you need a function that accepts:
 * optionally a noise model, 
 * and returns a `stim.Circuit` or a `qiskit.QuantumCircuit`, a Qrisp `DetectorExperiment`, or ...
 
-`surface_code.py` has three stubs with these signatures. You can pick one starting point: `make_stim_circuit()` (shared by both tracks, needs one of the converters to run on hardware), `make_qiskit_circuit()` or `make_qrisp_experiment()`. Their docstrings list the pros and cons.
+`make_stim_circuit()` in `surface_code.py` implements the Stim starting point for step 1. It supports distance, rounds, X/Z memory, optional noise, and the `no_reset` switch. For this project's Garnet study, ancillas are reset between rounds by default (`no_reset=False`). The alternative Qiskit-native and Qrisp-native entry points remain unimplemented.
+
+See [SIMULATION.md](SIMULATION.md) for the simulator-only setup, Python examples, and `simulate_surface_code.py`. This local path needs no IQM credentials and submits no QPU jobs.
+
+**The full local Garnet baseline is also implemented:** `run_simulation_baseline.py`
+generates and lowers the circuit to native Clifford/CZ operations, applies an
+explicit Pauli approximation to the downloaded Garnet benchmarking data, samples
+raw measurements, extracts detectors, decodes with PyMatching, and fits decoded
+failure probability across round counts. It evaluates native-edge placements
+with Monte Carlo screening and simulated annealing, then uses independent
+holdout shots before recommending a change. Ancilla resets are enabled by default.
+See [SIMULATION.md](SIMULATION.md#full-decoded-baseline-and-mapping-optimization)
+for commands, statistical checks, and the noise-model assumptions. This is a
+simulation baseline, not a measured Garnet logical error rate.
 
 You do not have to build this in Stim or Qiskit if you prefer to use another framework! 
 
-On Emerald, you must implement a no-reset version of the experiment: it does not support mid-circuit reset, so the circuit that runs on hardware must be the no-reset variant. Most surface codes default to mid-circuit resets on ancilla qubits after a measurement (`MR`), so each round starts with a fresh ancilla and each raw measurement directly gives that round's syndrome. An alternative is to omit the reset: the ancilla then accumulates across rounds, and each raw measurement is the ``XOR`` of all syndromes up to that point. The detection events mean the same in both cases, but in raw measurements a no-reset detector is the XOR of the measurements two rounds apart (m_k XOR m_(k-2)) instead of consecutive ones, so the detector definitions must be rewritten. In terms of hardware performance for the experiment, an interesting trade-off occurs: The no-reset version avoids the qubit reset error, leaving the ancilla live and decohering between rounds.
+Garnet uses resets in this implementation (`no_reset=False`). A no-reset
+variant remains available for simulator comparisons, but is not the hardware
+execution default. The implemented hardware reset is a measurement followed by
+a conditional X; the saved reference models readout faults in that feedback.
 
 ### 2. A way to decode the syndromes and compute the logical error rate
 
-`decode_hardware_results` does not do anything in its current form. The detection events and observable flips are already correctly formatted when they arrive here — `det_events` is a `(shots, num_detectors)` boolean array, `obs_flips` is `(shots, num_observables)`. What is missing is the actual decoding step and the statistical aggregation into a logical error rate and its uncertainty. If you decode with a detector error model (DEM), its detectors must match the circuit that you executed on hardware
+`decode_hardware_results` now uses the matching noisy reference to decode with PyMatching; the CLI aggregates completed experiments and fits the LER. The detection events and observable flips are already correctly formatted when they arrive here — `det_events` is a `(shots, num_detectors)` boolean array, `obs_flips` is `(shots, num_observables)`. The implemented Garnet pipeline performs decoding, binomial uncertainty estimation and fits across round counts. If you decode with a detector error model (DEM), its detectors must match the circuit that you executed on hardware
+
+The standalone step-2 report is generated without credentials or new QPU jobs:
+
+```sh
+python analyze_logical_error_rate.py output/garnet-dd-qpu-20261024 \
+  --out output/step2-logical-error-rate
+```
+
+It preserves the original records, rechecks MWPM decoding, and reports the fitted
+per-round rate with a 95% interval, goodness of fit, P_error versus rounds and
+logical fidelity F=1-2P_error. Memory bases and DD settings remain separate.
+See [HARDWARE.md](HARDWARE.md#step-2-decode-saved-shots-and-report-the-logical-error-rate).
 
 Options are plenty, but PyMatching (specifically the MWPM decoder) will give you the fastest out-of-the-box result. 
 
@@ -156,14 +191,19 @@ For a single round count this solves to `ε_L = ½ [1 - (1 - 2 P_error)^(1/n_rou
 
 ### 3. (Optional but Recommended) A simulation baseline
 
-`raw_stim_d3_surface_code.py` gives you a starting point, but it simulates a with-reset circuit. Before spending QPU time, it is strongly advisable to run the same circuit (i.e. your no-reset circuit) through a simulator with a noise model and validate that the pipeline is working correctly end to end. A simulation baseline also gives you an expected LER to compare against the hardware result, even though there will be big discrepancies.
+Before spending QPU time, validate the same circuit through a noisy simulator.
+`run_garnet.py` prepares a feedback-aware reference, checks the compiled Qiskit
+circuit with ideal Aer, and runs the matching noisy Stim/MWPM baseline. The
+standalone optimization study remains documented in [SIMULATION.md](SIMULATION.md).
+Both use with-reset circuits for Garnet, with the feedback distinction described
+in [HARDWARE.md](HARDWARE.md).
 
 ### 4. (Optional) Custom hardware qubit placement
 
-`build_emerald_qubit_map` returns an empty dictionary. The Qiskit transpiler handles qubit placement automatically and will find a valid mapping, but it does so without knowledge of the surface code's structure. The rotated surface code can be aligned to Emerald's square grid, eliminating SWAP overhead entirely. If you are using Stim, the `print_qubit_map` function will then show you the mapping and flag any non-native pairs, so you can verify before submitting. 
-In Qiskit this verification is straight forward. On the Qrisp track, `vf2pp_layout` does the placement for you.
-
-Since the code is somewhat convoluted, we again recommend extensive investigation or writing these functions yourselfes. 
+The implemented Garnet path uses the saved native-edge maps in
+`calibrations/garnet-selected-layouts.json`. It validates all edges against the
+live architecture and rejects routing, changed placement or changed measurement
+assignment. The legacy mapping starter is not used.
 
 ---
 
@@ -184,5 +224,5 @@ For a more substantial extension, the **NVIDIA Ising Predecoder** offers a hardw
 
 ### Different hardware patches and code distances
 
-The pipeline as set up targets a distance-3 rotated surface code (17 qubits) on a single 5×5 region of Emerald. Several natural extensions exist: running the same code on different 5×5 sub-regions of the chip and comparing logical error rates across regions reveals spatial variation in hardware quality. Trying distance-5 (49 qubits) would require a larger patch but fits on Emerald's full qubit count. Trying the distance-3 code on Garnet also gives you an idea on how a different QPU behaves. 
+The implemented hardware path targets a distance-3 rotated surface code (17 active qubits) on Garnet. Comparing its four native-edge embeddings is a natural extension. Distance 5 requires 49 qubits and does not fit on Garnet's 20 qubits.
 

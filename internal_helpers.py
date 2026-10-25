@@ -20,7 +20,8 @@ def get_qubit_lists(circuit: stim.Circuit) -> tuple[list, list]:
     NOTE: PLEASE DOUBLE CHECK FUNCTIONALITY!
 
     Supports both standard circuits (ancillas use MR) and no-reset circuits
-    (ancillas use M). When QUBIT_COORDS annotations are present, distinguishes
+    (ancillas use M), including X/Y-basis data readout. When QUBIT_COORDS
+    annotations are present, distinguishes
     by coordinate parity:
         data qubits   → both x and y coordinates are odd
         ancilla qubits → at least one coordinate is even
@@ -31,7 +32,7 @@ def get_qubit_lists(circuit: stim.Circuit) -> tuple[list, list]:
     # Collect all measured qubit indices
     all_measured: set[int] = set()
     for instr in circuit.flattened():
-        if instr.name in ("M", "MR"):
+        if instr.name in ("M", "MX", "MY", "MR", "MRX", "MRY"):
             for t in instr.targets_copy():
                 if t.is_qubit_target:
                     all_measured.add(t.value)
@@ -51,14 +52,11 @@ def get_qubit_lists(circuit: stim.Circuit) -> tuple[list, list]:
     return data_q, anc_q
 
 
-    return data_q, anc_q
-
-
 def get_meas_order(circuit: stim.Circuit) -> list:
     """Returns list of Stim qubit indices in measurement order."""
     order = []
     for instr in circuit.flattened():
-        if instr.name in ("M", "MR"):
+        if instr.name in ("M", "MX", "MY", "MR", "MRX", "MRY"):
             for t in instr.targets_copy():
                 if t.is_qubit_target:
                     order.append(t.value)
@@ -81,13 +79,35 @@ def counts_to_measurement_array(
     Qiskit bitstrings are RIGHT-TO-LEFT: rightmost character = clbit 0.
     Stim's measurement order corresponds to clbit 0, 1, 2, … in sequence.
     """
-    result = np.zeros((total_shots, num_measurements), dtype=bool)
+    if isinstance(num_measurements, bool) or not isinstance(num_measurements, (int, np.integer)) or num_measurements < 1:
+        raise ValueError("num_measurements must be a positive integer")
+    if isinstance(total_shots, bool) or not isinstance(total_shots, (int, np.integer)) or total_shots < 1:
+        raise ValueError("total_shots must be a positive integer")
+    if not counts:
+        raise ValueError("No measurement counts returned")
+    for key, count in counts.items():
+        if isinstance(count, bool) or not isinstance(count, (int, np.integer)) or count < 0:
+            raise ValueError("Counts must be nonnegative integers")
+        if not isinstance(key, str):
+            raise ValueError("Expected Qiskit binary or hexadecimal count keys")
+    if sum(counts.values()) != total_shots:
+        raise ValueError("Returned shot count differs from requested shots")
+    result = np.empty((total_shots, num_measurements), dtype=bool)
     row = 0
     for bitstring, count in counts.items():
-        # Reverse so index 0 = clbit 0
-        bits = bitstring[::-1]
-        meas = np.array([int(b) for b in bits[:num_measurements]], dtype=bool)
-        for _ in range(count):
-            result[row] = meas
-            row += 1
+        if bitstring.startswith("0x"):
+            try:
+                value = int(bitstring, 16)
+            except ValueError as error:
+                raise ValueError("Invalid hexadecimal count key") from error
+            if value < 0 or value >= 2 ** num_measurements:
+                raise ValueError("Count key exceeds measurement width")
+            bits = format(value, f"0{num_measurements}b")
+        else:
+            bits = bitstring.replace(" ", "")
+            if len(bits) != num_measurements or set(bits) - {"0", "1"}:
+                raise ValueError("Count key has the wrong measurement width or nonbinary characters")
+        meas = np.array([int(b) for b in bits[::-1]], dtype=bool)
+        result[row:row + count] = meas
+        row += count
     return result

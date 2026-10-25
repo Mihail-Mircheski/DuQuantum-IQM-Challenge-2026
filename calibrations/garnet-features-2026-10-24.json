@@ -1,0 +1,20 @@
+{
+  "source_url": "https://resonance.iqm.tech/#garnet",
+  "access": "Viewed directly in the user's authenticated Google Chrome session",
+  "benchmark_time_displayed": "24 Oct, 2026, 12:39 GMT-4",
+  "qubits": 20,
+  "topology": "CRYSTAL 20",
+  "pulse_level_access": false,
+  "max_total_shots": 2000000,
+  "max_shots_per_circuit": 20000,
+  "max_circuits": 100,
+  "median_prx_fidelity": 0.9994,
+  "median_cz_fidelity": 0.995,
+  "median_t1_seconds": 0.00003708,
+  "median_t2_ramsey_seconds": 0.00000908,
+  "median_t2_echo_seconds": 0.00001990,
+  "native_gates": ["cc_prx", "cz", "measure", "measure_012", "measure_fidelity", "prx", "prx_12", "reset_wait"],
+  "qccsw_version": "4.7.0-00028646-7f5f7db3",
+  "calibration_file": "garnet-2026-10-24.json",
+  "note": "These are a dated observation, not a promise of current hardware availability or limits. No hardware job was submitted."
+}

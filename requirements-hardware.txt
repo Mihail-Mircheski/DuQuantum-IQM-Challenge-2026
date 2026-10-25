@@ -1,0 +1,5 @@
+-r requirements-sim.txt
+# IQM Client 35 targets Qiskit <2.2; do not upgrade Qiskit independently.
+iqm-client[qiskit]==35.0.3
+qiskit==2.1.2
+qiskit-aer==0.17.2
