@@ -1,0 +1,86 @@
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "run": "prior",
+      "experiment": "Z_r1",
+      "routing_swaps": 0,
+      "cz_count": 24,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "prior",
+      "experiment": "Z_r2",
+      "routing_swaps": 0,
+      "cz_count": 48,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "prior",
+      "experiment": "Z_r3",
+      "routing_swaps": 0,
+      "cz_count": 72,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "prior",
+      "experiment": "X_r1",
+      "routing_swaps": 0,
+      "cz_count": 24,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "prior",
+      "experiment": "X_r2",
+      "routing_swaps": 0,
+      "cz_count": 48,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "prior",
+      "experiment": "X_r3",
+      "routing_swaps": 0,
+      "cz_count": 72,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "followup",
+      "experiment": "Z_r5",
+      "routing_swaps": 0,
+      "cz_count": 120,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    },
+    {
+      "run": "followup",
+      "experiment": "X_r5",
+      "routing_swaps": 0,
+      "cz_count": 120,
+      "cz_pairs_and_multiplicities_match_surface_code": true,
+      "all_cz_edges_native": true,
+      "physical_measurement_assignments_match": true,
+      "returned_native_payload_verified": true
+    }
+  ],
+  "scope": "Saved/submitted/returned native gate circuits; no server pulse playlist was inspected."
+}

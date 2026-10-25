@@ -1,0 +1,13 @@
+{
+  "purpose": "Core source used to prepare and submit the completed QPU batch; preserved before collection-compatibility and measurement-grouping updates. Exact executed gate payload is request-0.json.",
+  "sha256": {
+    "garnet_hardware.py": "ebb0c37ea035f5fc534d955901ac82317ffca82be10d23b1d85e86da0971909a",
+    "stim_to_qiskit.py": "e151da1d48d38e79636120e308c652f198033a57469c4f8349b17bb024ec4100",
+    "garnet_model.py": "eb44c4ec76df8496d2d048f3ce646bcc022fb49f5f75ad22678799c16718985a",
+    "simulation_baseline.py": "16fb2de94b72fd3787ffb44b41faf979a6f19b5f5ad3bd5b74c204e6c6e469b9",
+    "surface_code.py": "18d4b85a935057e504eaaff885f548f94c15d5e9a47de60f05504157c7bae1e9",
+    "internal_helpers.py": "ee36ee111628a8b820cbb2c5542f51b2f5d7596f6ea655469167968acba0c545",
+    "logical_rate_fit.py": "0fc08250d4c0c630866e8083dcdbdb305455ab4a066e9a85d5db222335ec8a65",
+    "calibrations/garnet-selected-layouts.json": "8a3b83111727532bd2b359ea32c8ebb1571baa92a5398603f9df214407ddc03c"
+  }
+}

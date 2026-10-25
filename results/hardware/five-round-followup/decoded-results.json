@@ -1,0 +1,97 @@
+{
+  "source": "Garnet QPU",
+  "calibration_set_id": "a18a947f-0408-4628-81ea-1715637e434f",
+  "dd_profile": "xx",
+  "compilation_options": {
+    "dd_mode": "enabled",
+    "dd_strategy": {
+      "merge_contiguous_waits": true,
+      "target_qubits": [
+        "QB10",
+        "QB12",
+        "QB14",
+        "QB16",
+        "QB19",
+        "QB2",
+        "QB4",
+        "QB6",
+        "QB8"
+      ],
+      "skip_leading_wait": true,
+      "skip_trailing_wait": true,
+      "gate_sequences": [
+        [
+          2,
+          "XX",
+          "center"
+        ]
+      ]
+    }
+  },
+  "points": [
+    {
+      "experiment": "Z_r5",
+      "basis": "Z",
+      "rounds": 5,
+      "shots": 500,
+      "failures": 195,
+      "failure_probability": 0.39,
+      "ci95": [
+        0.3482413304011046,
+        0.43343602450043706
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 500,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 1794,
+        "failure_probability": 0.0897,
+        "ci95": [
+          0.08581814811753766,
+          0.09373943667010179
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000000,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.25925,
+        "shots_with_detection_events": 18901,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      }
+    },
+    {
+      "experiment": "X_r5",
+      "basis": "X",
+      "rounds": 5,
+      "shots": 500,
+      "failures": 219,
+      "failure_probability": 0.438,
+      "ci95": [
+        0.39514834408666566,
+        0.48179707413056694
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 499,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 2022,
+        "failure_probability": 0.1011,
+        "ci95": [
+          0.09699834128783236,
+          0.1053548650777279
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000001,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.21695,
+        "shots_with_detection_events": 18886,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      }
+    }
+  ],
+  "fits": {},
+  "decoder_note": "MWPM weights use the saved approximate calibration snapshot, not a measured hardware noise channel."
+}

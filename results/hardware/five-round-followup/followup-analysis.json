@@ -1,0 +1,352 @@
+{
+  "calibration_set_id": "a18a947f-0408-4628-81ea-1715637e434f",
+  "dd_profile": "xx",
+  "new_shots": 1000,
+  "earlier_shots_reused": 3000,
+  "points": [
+    {
+      "experiment": "Z_r1",
+      "basis": "Z",
+      "rounds": 1,
+      "shots": 500,
+      "failures": 38,
+      "failure_probability": 0.076,
+      "ci95": [
+        0.05586902703742783,
+        0.10259641367396849
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 286,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 564,
+        "failure_probability": 0.0282,
+        "ci95": [
+          0.025994756174318685,
+          0.03058644904822163
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000000,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.14275,
+        "shots_with_detection_events": 8935,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "Z_r2",
+      "basis": "Z",
+      "rounds": 2,
+      "shots": 500,
+      "failures": 89,
+      "failure_probability": 0.178,
+      "ci95": [
+        0.14696488670733526,
+        0.21394518854990435
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 433,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 927,
+        "failure_probability": 0.04635,
+        "ci95": [
+          0.043522343543116744,
+          0.049351890770586986
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000001,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.17805,
+        "shots_with_detection_events": 13888,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "Z_r3",
+      "basis": "Z",
+      "rounds": 3,
+      "shots": 500,
+      "failures": 115,
+      "failure_probability": 0.23,
+      "ci95": [
+        0.1952549251744704,
+        0.26886221867476784
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 479,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 1187,
+        "failure_probability": 0.05935,
+        "ci95": [
+          0.05615924766114777,
+          0.06270999371509724
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000002,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.2053,
+        "shots_with_detection_events": 16710,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "X_r1",
+      "basis": "X",
+      "rounds": 1,
+      "shots": 500,
+      "failures": 46,
+      "failure_probability": 0.092,
+      "ci95": [
+        0.06968272368045207,
+        0.12053873813617454
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 289,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 674,
+        "failure_probability": 0.0337,
+        "ci95": [
+          0.031287239432944404,
+          0.036291853392978767
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000003,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.1184,
+        "shots_with_detection_events": 8975,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "X_r2",
+      "basis": "X",
+      "rounds": 2,
+      "shots": 500,
+      "failures": 98,
+      "failure_probability": 0.196,
+      "ci95": [
+        0.16357810661426447,
+        0.2330574923863593
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 435,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 1080,
+        "failure_probability": 0.054,
+        "ci95": [
+          0.05095239011465099,
+          0.05721890604739433
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000004,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.14745,
+        "shots_with_detection_events": 13895,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "X_r3",
+      "basis": "X",
+      "rounds": 3,
+      "shots": 500,
+      "failures": 104,
+      "failure_probability": 0.208,
+      "ci95": [
+        0.17471631170962926,
+        0.24573630311991723
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 485,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 1439,
+        "failure_probability": 0.07195,
+        "ci95": [
+          0.06845035534878732,
+          0.07561404671884384
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000005,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.1714,
+        "shots_with_detection_events": 16787,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "prior"
+    },
+    {
+      "experiment": "Z_r5",
+      "basis": "Z",
+      "rounds": 5,
+      "shots": 500,
+      "failures": 195,
+      "failure_probability": 0.39,
+      "ci95": [
+        0.3482413304011046,
+        0.43343602450043706
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 500,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 1794,
+        "failure_probability": 0.0897,
+        "ci95": [
+          0.08581814811753766,
+          0.09373943667010179
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000000,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.25925,
+        "shots_with_detection_events": 18901,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "followup"
+    },
+    {
+      "experiment": "X_r5",
+      "basis": "X",
+      "rounds": 5,
+      "shots": 500,
+      "failures": 219,
+      "failure_probability": 0.438,
+      "ci95": [
+        0.39514834408666566,
+        0.48179707413056694
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "shots_with_detection_events": 499,
+      "simulation_baseline": {
+        "shots": 20000,
+        "failures": 2022,
+        "failure_probability": 0.1011,
+        "ci95": [
+          0.09699834128783236,
+          0.1053548650777279
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 1000001,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.21695,
+        "shots_with_detection_events": 18886,
+        "decoder": "PyMatching MWPM using the matching circuit DEM",
+        "dd_effect_modeled": false,
+        "reference_kind": "Pre-DD gate/readout Pauli model; excludes idle decoherence"
+      },
+      "run": "followup"
+    }
+  ],
+  "fits": {
+    "Z": {
+      "challenge": {
+        "model": "challenge",
+        "epsilon_per_round": 0.10087264806734546,
+        "epsilon_ci95": [
+          0.09071228513529518,
+          0.11199792070346919
+        ],
+        "spam_offset": 0.0,
+        "deviance": 10.32893059087246,
+        "degrees_of_freedom": 3,
+        "goodness_of_fit_p_value": 0.015967416363095052,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "spam_diagnostic": {
+        "model": "spam_offset",
+        "epsilon_per_round": 0.10087264928629805,
+        "epsilon_ci95": [
+          0.09052540836741553,
+          0.11199792070346946
+        ],
+        "spam_offset": 0.0,
+        "deviance": 10.328930590872687,
+        "degrees_of_freedom": 2,
+        "goodness_of_fit_p_value": 0.005716118456628646,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "prediction_at_r5_from_prior_fit": 0.31727322083159704
+    },
+    "X": {
+      "challenge": {
+        "model": "challenge",
+        "epsilon_per_round": 0.10946183426236294,
+        "epsilon_ci95": [
+          0.0986904269011986,
+          0.12125212441460355
+        ],
+        "spam_offset": 0.0,
+        "deviance": 24.235494142639936,
+        "degrees_of_freedom": 3,
+        "goodness_of_fit_p_value": 2.230582669206023e-05,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "spam_diagnostic": {
+        "model": "spam_offset",
+        "epsilon_per_round": 0.10946183364303355,
+        "epsilon_ci95": [
+          0.09818402707500636,
+          0.12125212441460433
+        ],
+        "spam_offset": 0.0,
+        "deviance": 24.235494142640164,
+        "degrees_of_freedom": 2,
+        "goodness_of_fit_p_value": 5.461718515396622e-06,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "prediction_at_r5_from_prior_fit": 0.32357895607180404
+    }
+  },
+  "compatibility_checks_passed": true,
+  "matching_submitted_source_sha256": {
+    "garnet_hardware.py": "ce84aa5ed2b976ca1f5f26a1e7258a87f6dab12c9b3c111f807af4ebf74d52fd",
+    "stim_to_qiskit.py": "fc2404a18fff17d1a1a05f7f81fb2079fdff002237efebef1cf995e598c60b34",
+    "garnet_model.py": "eb44c4ec76df8496d2d048f3ce646bcc022fb49f5f75ad22678799c16718985a",
+    "simulation_baseline.py": "16fb2de94b72fd3787ffb44b41faf979a6f19b5f5ad3bd5b74c204e6c6e469b9",
+    "surface_code.py": "18d4b85a935057e504eaaff885f548f94c15d5e9a47de60f05504157c7bae1e9",
+    "internal_helpers.py": "ee36ee111628a8b820cbb2c5542f51b2f5d7596f6ea655469167968acba0c545",
+    "logical_rate_fit.py": "0fc08250d4c0c630866e8083dcdbdb305455ab4a066e9a85d5db222335ec8a65",
+    "calibrations/garnet-selected-layouts.json": "8a3b83111727532bd2b359ea32c8ebb1571baa92a5398603f9df214407ddc03c"
+  },
+  "new_job_ids": [
+    "01a170dc-141c-7179-8e99-814ac7642816"
+  ],
+  "prior_job_ids": [
+    "01a17039-46da-721d-8b3c-ba479ef0ca4d"
+  ],
+  "limitations": "Sequential jobs, not interleaved; same calibration UUID does not exclude drift. Binomial/profile intervals exclude shot correlations, noise-model error and drift. Fits assume stationary independent logical flips. No new DD-off control was run.",
+  "completed_utc": "2026-10-25T02:45:16.230186Z",
+  "completed_new_york": "2026-10-24T22:45:16.230186-04:00"
+}

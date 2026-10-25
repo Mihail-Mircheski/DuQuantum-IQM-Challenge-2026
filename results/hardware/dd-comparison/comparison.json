@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "device": "garnet",
+  "calibration_set_id": "a18a947f-0408-4628-81ea-1715637e434f",
+  "arm_order": [
+    "off",
+    "xx"
+  ],
+  "bases": [
+    "Z",
+    "X"
+  ],
+  "rounds": [
+    1,
+    2,
+    3
+  ],
+  "shots_per_point": 500,
+  "total_authorized_shots": 6000,
+  "mode": "hardware_complete",
+  "arms": {
+    "off": {
+      "directory": "off",
+      "state": "hardware_complete",
+      "planned_shots": 3000,
+      "job_ids": [
+        "01a17038-99ae-7572-8bb0-a0f98b62391f"
+      ]
+    },
+    "xx": {
+      "directory": "xx",
+      "state": "hardware_complete",
+      "planned_shots": 3000,
+      "job_ids": [
+        "01a17039-46da-721d-8b3c-ba479ef0ca4d"
+      ]
+    }
+  },
+  "native_requests_identical_except_dd_options": true
+}

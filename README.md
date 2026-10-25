@@ -8,6 +8,14 @@ for installation, commands, calibration checks, job recovery and decoded results
 The original challenge also describes larger-device and Qrisp extensions; those
 are separate from the implemented Garnet path.
 
+## Saved figures and results
+
+The [results gallery](results/README.md) contains the generated simulation and
+QPU graphs, supporting counts and fits, circuit diagrams, interactive explanation
+and presentation previews. Corrected DD experiments, the five-round follow-up
+and the earlier hardware run are labeled separately. Raw working output remains
+ignored; the organized results are versioned under `results/`.
+
 ## Quantum Error correction - Memory experiment
 
 Quantum computers are fundamentally noise-limited: every gate, every idle moment, every measurement introduces errors that accumulate faster than useful computation can proceed. 

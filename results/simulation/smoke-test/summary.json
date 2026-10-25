@@ -1,0 +1,2305 @@
+{
+  "config": {
+    "basis": "Z",
+    "distance": 3,
+    "round_counts": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10
+    ],
+    "no_reset": false,
+    "shots_per_point": 10000,
+    "screen_shots": 3000,
+    "validation_shots": 20000,
+    "search_rounds": 3,
+    "anneal_steps": 200,
+    "seed": 42,
+    "hardware_jobs_submitted": 0
+  },
+  "noise_model": {
+    "source_url": "https://resonance.iqm.tech/#garnet",
+    "file": "garnet-2026-10-24.json",
+    "sha256": "c5ab62169b5ba9e27ca393ebb079fcdba3df1207e24159466f3870b517a182da",
+    "observation_set_id": "21a722ad-dd22-427b-ab39-c06e5b094c2f",
+    "describes_id": "a18a947f-0408-4628-81ea-1715637e434f",
+    "created_timestamp": "2026-10-24T16:39:01.009280Z",
+    "prx_metric": "metrics.rb.prx.drag_crf_sx.*.fidelity:par=d2",
+    "cz_metric": "metrics.irb.cz.slepian_crf.*.fidelity:par=d2",
+    "readout_metric": "metrics.ssro.measure.constant.*.assignment_error",
+    "assumed_reset_flip_probability": 0.003,
+    "limitations": [
+      "RB/IRB infidelity is converted to a depolarizing Pauli approximation.",
+      "Readout asymmetry and correlations are replaced by symmetric flips.",
+      "Active-reset errors are assumed, not measured in this export.",
+      "T1/T2 idle noise is excluded because operation durations are unavailable.",
+      "Leakage, coherent errors, crosstalk and measurement disturbance are excluded.",
+      "Native Clifford decomposition is explicit and unoptimized; it is not an IQM transpiler output.",
+      "A simulation result is not a prediction verified on Garnet hardware."
+    ],
+    "noise_scale": 1.0
+  },
+  "software": {
+    "python": "3.13.5",
+    "numpy": "2.5.4",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "scipy": "1.18.1"
+  },
+  "layouts": [
+    {
+      "10": "QB10",
+      "9": "QB5",
+      "3": "QB4",
+      "11": "QB9",
+      "8": "QB6",
+      "16": "QB11",
+      "18": "QB15",
+      "12": "QB14",
+      "17": "QB16",
+      "1": "QB2",
+      "2": "QB1",
+      "5": "QB8",
+      "13": "QB13",
+      "14": "QB7",
+      "15": "QB12",
+      "19": "QB19",
+      "25": "QB20"
+    },
+    {
+      "10": "QB10",
+      "9": "QB9",
+      "3": "QB14",
+      "11": "QB15",
+      "8": "QB4",
+      "16": "QB5",
+      "18": "QB11",
+      "12": "QB16",
+      "17": "QB6",
+      "1": "QB8",
+      "2": "QB13",
+      "5": "QB19",
+      "13": "QB20",
+      "15": "QB2",
+      "14": "QB1",
+      "19": "QB12",
+      "25": "QB7"
+    },
+    {
+      "10": "QB10",
+      "9": "QB11",
+      "3": "QB6",
+      "11": "QB5",
+      "8": "QB16",
+      "16": "QB15",
+      "18": "QB9",
+      "12": "QB4",
+      "17": "QB14",
+      "1": "QB12",
+      "2": "QB7",
+      "5": "QB2",
+      "13": "QB1",
+      "15": "QB19",
+      "14": "QB20",
+      "19": "QB8",
+      "25": "QB13"
+    },
+    {
+      "10": "QB10",
+      "9": "QB15",
+      "3": "QB16",
+      "11": "QB11",
+      "8": "QB14",
+      "16": "QB9",
+      "18": "QB5",
+      "12": "QB6",
+      "17": "QB4",
+      "1": "QB19",
+      "2": "QB20",
+      "5": "QB12",
+      "13": "QB7",
+      "15": "QB8",
+      "14": "QB13",
+      "19": "QB2",
+      "25": "QB1"
+    }
+  ],
+  "search": {
+    "best_index": 2,
+    "best_screening_cost": 0.050666666666666665,
+    "trace": [
+      {
+        "step": 0,
+        "temperature": 0.02,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 0
+      },
+      {
+        "step": 1,
+        "temperature": 0.019542483070692996,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 0
+      },
+      {
+        "step": 2,
+        "temperature": 0.019095432228416115,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 0
+      },
+      {
+        "step": 3,
+        "temperature": 0.01865860805256937,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 0
+      },
+      {
+        "step": 4,
+        "temperature": 0.018231776599501644,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 0
+      },
+      {
+        "step": 5,
+        "temperature": 0.01781470927722088,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 0
+      },
+      {
+        "step": 6,
+        "temperature": 0.017407182722970326,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 0
+      },
+      {
+        "step": 7,
+        "temperature": 0.017008978683605357,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 0
+      },
+      {
+        "step": 8,
+        "temperature": 0.016619883898706788,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 9,
+        "temperature": 0.016239689986368024,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 10,
+        "temperature": 0.015868193331594983,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 11,
+        "temperature": 0.015505194977258923,
+        "proposed": 3,
+        "accepted": false,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 12,
+        "temperature": 0.015150500517543828,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 13,
+        "temperature": 0.014803919993831285,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 14,
+        "temperature": 0.014465267792967074,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 15,
+        "temperature": 0.014134362547854985,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 16,
+        "temperature": 0.013811027040324655,
+        "proposed": 3,
+        "accepted": false,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 17,
+        "temperature": 0.01349508810622139,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 18,
+        "temperature": 0.013186376542667093,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 19,
+        "temperature": 0.012884727017442745,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 20,
+        "temperature": 0.012589977980443774,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 21,
+        "temperature": 0.012301971577161005,
+        "proposed": 3,
+        "accepted": false,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 22,
+        "temperature": 0.012020553564140765,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 23,
+        "temperature": 0.011745573226378963,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 24,
+        "temperature": 0.01147688329660479,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 25,
+        "temperature": 0.011214339876410918,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 26,
+        "temperature": 0.010957802359187885,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 27,
+        "temperature": 0.01070713335482145,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 28,
+        "temperature": 0.010462198616112525,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 29,
+        "temperature": 0.010222866966880335,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 30,
+        "temperature": 0.00998901023171028,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 31,
+        "temperature": 0.009760503167308863,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 32,
+        "temperature": 0.00953722339542894,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 33,
+        "temperature": 0.009319051337329362,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 34,
+        "temperature": 0.0091058701497339,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 35,
+        "temperature": 0.008897565662255169,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 36,
+        "temperature": 0.00869402631625005,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 37,
+        "temperature": 0.008495143105073799,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 38,
+        "temperature": 0.008300809515700952,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 39,
+        "temperature": 0.008110921471681657,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 40,
+        "temperature": 0.007925377277402956,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 41,
+        "temperature": 0.00774407756362511,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 42,
+        "temperature": 0.0075669252342638596,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 43,
+        "temperature": 0.007393825414390055,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 44,
+        "temperature": 0.007224685399418863,
+        "proposed": 3,
+        "accepted": true,
+        "current": 3,
+        "cost": 0.06533333333333333,
+        "best": 2
+      },
+      {
+        "step": 45,
+        "temperature": 0.007059414605461299,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 46,
+        "temperature": 0.006897924520811516,
+        "proposed": 3,
+        "accepted": false,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 47,
+        "temperature": 0.006740128658543857,
+        "proposed": 3,
+        "accepted": false,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 48,
+        "temperature": 0.006585942510194302,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 49,
+        "temperature": 0.006435283500501472,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 50,
+        "temperature": 0.006288070943183001,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 51,
+        "temperature": 0.006144225997723515,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 52,
+        "temperature": 0.006003671627151179,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 53,
+        "temperature": 0.005866332556780089,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 54,
+        "temperature": 0.005732135233896501,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 55,
+        "temperature": 0.005601007788367262,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 56,
+        "temperature": 0.005472879994149341,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 57,
+        "temperature": 0.005347683231679893,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 58,
+        "temperature": 0.005225350451126657,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 59,
+        "temperature": 0.005105816136479035,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 60,
+        "temperature": 0.004989016270460634,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 61,
+        "temperature": 0.004874888300244441,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 62,
+        "temperature": 0.004763371103952316,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 63,
+        "temperature": 0.004654404957920818,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 64,
+        "temperature": 0.004547931504715857,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 65,
+        "temperature": 0.004443893721879046,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 66,
+        "temperature": 0.0043422358913890085,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 67,
+        "temperature": 0.00424290356982126,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 68,
+        "temperature": 0.004145843559190743,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 69,
+        "temperature": 0.004051003878461334,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 70,
+        "temperature": 0.003958333735707114,
+        "proposed": 0,
+        "accepted": true,
+        "current": 0,
+        "cost": 0.057666666666666665,
+        "best": 2
+      },
+      {
+        "step": 71,
+        "temperature": 0.0038677835009104625,
+        "proposed": 1,
+        "accepted": true,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 72,
+        "temperature": 0.0037793046793824195,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 73,
+        "temperature": 0.003692849885791088,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 74,
+        "temperature": 0.0036083728187841445,
+        "proposed": 3,
+        "accepted": false,
+        "current": 1,
+        "cost": 0.058,
+        "best": 2
+      },
+      {
+        "step": 75,
+        "temperature": 0.0035258282361918954,
+        "proposed": 2,
+        "accepted": true,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 76,
+        "temperature": 0.003445171930797573,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 77,
+        "temperature": 0.0033663607066619135,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 78,
+        "temperature": 0.003289352355989328,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 79,
+        "temperature": 0.0032141056365232777,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 80,
+        "temperature": 0.0031405802494587545,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 81,
+        "temperature": 0.0030687368178600252,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 82,
+        "temperature": 0.0029985368655720914,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 83,
+        "temperature": 0.002929942796614572,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 84,
+        "temperature": 0.002862917875046958,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 85,
+        "temperature": 0.0027974262052944767,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 86,
+        "temperature": 0.0027334327129240133,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 87,
+        "temperature": 0.0026709031258597975,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 88,
+        "temperature": 0.0026098039560288047,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 89,
+        "temperature": 0.0025501024814260265,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 90,
+        "temperature": 0.002491766728590016,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 91,
+        "temperature": 0.002434765455479323,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 92,
+        "temperature": 0.0023790681347406395,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 93,
+        "temperature": 0.002324644937359705,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 94,
+        "temperature": 0.002271466716686211,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 95,
+        "temperature": 0.002219504992824144,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 96,
+        "temperature": 0.002168731937379221,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 97,
+        "temperature": 0.002119120358555232,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 98,
+        "temperature": 0.002070643686591324,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 99,
+        "temperature": 0.0020232759595324146,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 100,
+        "temperature": 0.0019769918093251173,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 101,
+        "temperature": 0.0019317664482317407,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 102,
+        "temperature": 0.0018875756555550764,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 103,
+        "temperature": 0.0018443957646668654,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 104,
+        "temperature": 0.0018022036503330039,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 105,
+        "temperature": 0.001760976716328693,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 106,
+        "temperature": 0.001720692883336901,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 107,
+        "temperature": 0.001681330577123665,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 108,
+        "temperature": 0.0016428687169838853,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 109,
+        "temperature": 0.001605286704451435,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 110,
+        "temperature": 0.0015685644122675362,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 111,
+        "temperature": 0.0015326821736014917,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 112,
+        "temperature": 0.0014976207715180045,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 113,
+        "temperature": 0.0014633614286854394,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 114,
+        "temperature": 0.0014298857973195154,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 115,
+        "temperature": 0.0013971759493570499,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 116,
+        "temperature": 0.0013652143668544778,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 117,
+        "temperature": 0.0013339839326060243,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 118,
+        "temperature": 0.0013034679209764847,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 119,
+        "temperature": 0.0012736499889437172,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 120,
+        "temperature": 0.0012445141673460463,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 121,
+        "temperature": 0.001216044852329885,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 122,
+        "temperature": 0.0011882267969930067,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 123,
+        "temperature": 0.0011610451032189797,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 124,
+        "temperature": 0.0011344852136983955,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 125,
+        "temperature": 0.001108532904132621,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 126,
+        "temperature": 0.0010831742756158946,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 127,
+        "temperature": 0.0010583957471916885,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 128,
+        "temperature": 0.0010341840485793515,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 129,
+        "temperature": 0.0010105262130671359,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 130,
+        "temperature": 0.0009874095705678003,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 131,
+        "temperature": 0.0009648217408330742,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 132,
+        "temperature": 0.0009427506268233449,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 133,
+        "temperature": 0.0009211844082290211,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 134,
+        "temperature": 0.0009001115351400995,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 135,
+        "temperature": 0.0008795207218605438,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 136,
+        "temperature": 0.0008594009408641684,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 137,
+        "temperature": 0.000839741416888782,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 138,
+        "temperature": 0.0008205316211654386,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 139,
+        "temperature": 0.000801761265779693,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 140,
+        "temperature": 0.0007834202981618517,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 141,
+        "temperature": 0.0007654988957032627,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 142,
+        "temperature": 0.0007479874604957596,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 143,
+        "temperature": 0.0007308766141914514,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 144,
+        "temperature": 0.0007141571929800926,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 145,
+        "temperature": 0.0006978202426813544,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 146,
+        "temperature": 0.0006818570139493625,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 147,
+        "temperature": 0.0006662589575869347,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 148,
+        "temperature": 0.0006510177199670117,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 149,
+        "temperature": 0.0006361251385588239,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 150,
+        "temperature": 0.0006215732375564024,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 151,
+        "temperature": 0.0006073542236070919,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 152,
+        "temperature": 0.0005934604816377739,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 153,
+        "temperature": 0.0005798845707765753,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 154,
+        "temperature": 0.0005666192203678648,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 155,
+        "temperature": 0.0005536573260784131,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 156,
+        "temperature": 0.0005409919460926271,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 157,
+        "temperature": 0.0005286162973948212,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 158,
+        "temperature": 0.0005165237521365353,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 159,
+        "temperature": 0.0005047078340869532,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 160,
+        "temperature": 0.0004931622151645205,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 161,
+        "temperature": 0.0004818807120479052,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 162,
+        "temperature": 0.0004708572828644836,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 163,
+        "temperature": 0.00046008602395458366,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 164,
+        "temperature": 0.0004495611667097451,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 165,
+        "temperature": 0.0004392770744833092,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 166,
+        "temperature": 0.00042922823957168094,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 167,
+        "temperature": 0.0004194092802646466,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 168,
+        "temperature": 0.00040981493796316947,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 169,
+        "temperature": 0.0004004400743631169,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 170,
+        "temperature": 0.0003912796687034128,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 171,
+        "temperature": 0.0003823288150771406,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 172,
+        "temperature": 0.00037358271980415656,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 173,
+        "temperature": 0.0003650366988638087,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 174,
+        "temperature": 0.0003566861753863819,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 175,
+        "temperature": 0.00034852667720193,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 176,
+        "temperature": 0.00034055383444517995,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 177,
+        "temperature": 0.0003327633772152258,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 178,
+        "temperature": 0.00032515113328875886,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 179,
+        "temperature": 0.00031771302588561056,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 180,
+        "temperature": 0.00031044507148540946,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 181,
+        "temperature": 0.00030334337769418455,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 182,
+        "temperature": 0.00029640414115977175,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 183,
+        "temperature": 0.00028962364553490675,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 184,
+        "temperature": 0.0002829982594869152,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 185,
+        "temperature": 0.00027652443475293114,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 186,
+        "temperature": 0.0002701987042396053,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 187,
+        "temperature": 0.0002640176801662836,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 188,
+        "temperature": 0.00025797805225066177,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 189,
+        "temperature": 0.0002520765859359455,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 190,
+        "temperature": 0.00024631012065856513,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 191,
+        "temperature": 0.00024067556815551787,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 192,
+        "temperature": 0.0002351699108104314,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 193,
+        "temperature": 0.00022979020003746184,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 194,
+        "temperature": 0.00022453355470216274,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 195,
+        "temperature": 0.0002193971595784767,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 196,
+        "temperature": 0.0002143782638410255,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 197,
+        "temperature": 0.00020947417959188996,
+        "proposed": 0,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 198,
+        "temperature": 0.00020468228042109065,
+        "proposed": 1,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      },
+      {
+        "step": 199,
+        "temperature": 0.0002,
+        "proposed": 3,
+        "accepted": false,
+        "current": 2,
+        "cost": 0.050666666666666665,
+        "best": 2
+      }
+    ],
+    "seed": 42,
+    "candidate_count": 4,
+    "baseline_index": 3,
+    "distinct_noise_circuits": 4,
+    "exhaustive_screening_best": 2,
+    "matches_exhaustive_screening_optimum": true,
+    "screening": {
+      "0": {
+        "shots": 3000,
+        "failures": 173,
+        "failure_probability": 0.057666666666666665,
+        "ci95": [
+          0.04987685524861582,
+          0.06658783292372254
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 15658369528003122356,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.16466666666666666,
+        "shots_with_detection_events": 2554,
+        "decoder": "PyMatching MWPM using the matching circuit DEM"
+      },
+      "1": {
+        "shots": 3000,
+        "failures": 174,
+        "failure_probability": 0.058,
+        "ci95": [
+          0.05018726284558232,
+          0.06694323942760584
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 16289122836146368227,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.14433333333333334,
+        "shots_with_detection_events": 2568,
+        "decoder": "PyMatching MWPM using the matching circuit DEM"
+      },
+      "2": {
+        "shots": 3000,
+        "failures": 152,
+        "failure_probability": 0.050666666666666665,
+        "ci95": [
+          0.04337731140028998,
+          0.05910528065420295
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 4944175102992914311,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.19966666666666666,
+        "shots_with_detection_events": 2487,
+        "decoder": "PyMatching MWPM using the matching circuit DEM"
+      },
+      "3": {
+        "shots": 3000,
+        "failures": 196,
+        "failure_probability": 0.06533333333333333,
+        "ci95": [
+          0.057034729976127706,
+          0.07474368251575565
+        ],
+        "confidence_method": "95% Wilson binomial interval",
+        "seed": 11521386295659209210,
+        "batch_size": 8192,
+        "raw_observable_flip_fraction": 0.21133333333333335,
+        "shots_with_detection_events": 2542,
+        "decoder": "PyMatching MWPM using the matching circuit DEM"
+      }
+    },
+    "objective": "Decoded failure probability after 3 rounds"
+  },
+  "independent_holdout": {
+    "baseline": {
+      "shots": 20000,
+      "failures": 1115,
+      "failure_probability": 0.05575,
+      "ci95": [
+        0.05265467871563883,
+        0.05901594532021013
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "seed": 12679245784909816615,
+      "batch_size": 8192,
+      "raw_observable_flip_fraction": 0.1989,
+      "shots_with_detection_events": 16734,
+      "decoder": "PyMatching MWPM using the matching circuit DEM"
+    },
+    "candidate": {
+      "shots": 20000,
+      "failures": 1007,
+      "failure_probability": 0.05035,
+      "ci95": [
+        0.04740490766399351,
+        0.05346779036126138
+      ],
+      "confidence_method": "95% Wilson binomial interval",
+      "seed": 17632974359236343210,
+      "batch_size": 8192,
+      "raw_observable_flip_fraction": 0.21255,
+      "shots_with_detection_events": 16728,
+      "decoder": "PyMatching MWPM using the matching circuit DEM"
+    },
+    "baseline_index": 3,
+    "candidate_index": 2,
+    "recommended_index": 2,
+    "one_sided_fisher_p_value": 0.00848473431342847,
+    "decision": "Candidate improved in independent holdout under this model"
+  },
+  "sweeps": {
+    "baseline": {
+      "layout_index": 3,
+      "points": [
+        {
+          "rounds": 1,
+          "shots": 10000,
+          "failures": 350,
+          "failure_probability": 0.035,
+          "ci95": [
+            0.03157280989269597,
+            0.03878430859203325
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 11964332998687924850,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.1382,
+          "shots_with_detection_events": 4515,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 2,
+          "shots": 10000,
+          "failures": 417,
+          "failure_probability": 0.0417,
+          "ci95": [
+            0.037954765678807054,
+            0.0457972072277551
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 16058691107200050918,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.1727,
+          "shots_with_detection_events": 7225,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 3,
+          "shots": 10000,
+          "failures": 571,
+          "failure_probability": 0.0571,
+          "ci95": [
+            0.05271999160197178,
+            0.061820154154773536
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 11914260434845945618,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.2023,
+          "shots_with_detection_events": 8476,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 5,
+          "shots": 10000,
+          "failures": 764,
+          "failure_probability": 0.0764,
+          "ci95": [
+            0.07135473014135223,
+            0.08177059327828497
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 12444299362145660333,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.2578,
+          "shots_with_detection_events": 9486,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 7,
+          "shots": 10000,
+          "failures": 1085,
+          "failure_probability": 0.1085,
+          "ci95": [
+            0.10255395126002159,
+            0.11474671946421816
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 8672904266273117166,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.309,
+          "shots_with_detection_events": 9811,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 10,
+          "shots": 10000,
+          "failures": 1283,
+          "failure_probability": 0.1283,
+          "ci95": [
+            0.12188785549857352,
+            0.13499760889018744
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 14608018126417774588,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.3648,
+          "shots_with_detection_events": 9960,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        }
+      ],
+      "challenge_fit": {
+        "model": "challenge",
+        "epsilon_per_round": 0.017636654208600052,
+        "epsilon_ci95": [
+          0.017100529768955545,
+          0.01818503654033465
+        ],
+        "spam_offset": 0.0,
+        "deviance": 203.4906880392664,
+        "degrees_of_freedom": 5,
+        "goodness_of_fit_p_value": 5.088396403065593e-42,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "spam_diagnostic_fit": {
+        "model": "spam_offset",
+        "epsilon_per_round": 0.012972692504648728,
+        "epsilon_ci95": [
+          0.012138132776541828,
+          0.013814390756563278
+        ],
+        "spam_offset": 0.02052736654582216,
+        "deviance": 12.109551216228283,
+        "degrees_of_freedom": 4,
+        "goodness_of_fit_p_value": 0.016554938392154703,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      }
+    },
+    "candidate": {
+      "layout_index": 2,
+      "points": [
+        {
+          "rounds": 1,
+          "shots": 10000,
+          "failures": 297,
+          "failure_probability": 0.0297,
+          "ci95": [
+            0.026549131566489234,
+            0.03321205730096917
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 3770535296603828094,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.1471,
+          "shots_with_detection_events": 4485,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 2,
+          "shots": 10000,
+          "failures": 406,
+          "failure_probability": 0.0406,
+          "ci95": [
+            0.036904912192822444,
+            0.04464790551015519
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 10794080969459409708,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.1814,
+          "shots_with_detection_events": 7228,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 3,
+          "shots": 10000,
+          "failures": 522,
+          "failure_probability": 0.0522,
+          "ci95": [
+            0.04800985071545024,
+            0.05673405822532771
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 2004454321882613730,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.2126,
+          "shots_with_detection_events": 8388,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 5,
+          "shots": 10000,
+          "failures": 749,
+          "failure_probability": 0.0749,
+          "ci95": [
+            0.06990243449340622,
+            0.080224040921343
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 1904513041310379768,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.2658,
+          "shots_with_detection_events": 9442,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 7,
+          "shots": 10000,
+          "failures": 903,
+          "failure_probability": 0.0903,
+          "ci95": [
+            0.08483872586595859,
+            0.09607592239897383
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 8973015671464610193,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.2933,
+          "shots_with_detection_events": 9806,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        {
+          "rounds": 10,
+          "shots": 10000,
+          "failures": 1261,
+          "failure_probability": 0.1261,
+          "ci95": [
+            0.119736905786346,
+            0.13275024819524592
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 14676807210889882836,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.3583,
+          "shots_with_detection_events": 9964,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        }
+      ],
+      "challenge_fit": {
+        "model": "challenge",
+        "epsilon_per_round": 0.016193620842472122,
+        "epsilon_ci95": [
+          0.015684391531739197,
+          0.01671479368877389
+        ],
+        "spam_offset": 0.0,
+        "deviance": 155.78762402024586,
+        "degrees_of_freedom": 5,
+        "goodness_of_fit_p_value": 7.818105699482597e-32,
+        "model_mismatch_flag": true,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      },
+      "spam_diagnostic_fit": {
+        "model": "spam_offset",
+        "epsilon_per_round": 0.012215185496686428,
+        "epsilon_ci95": [
+          0.011418718442499455,
+          0.013018769159386018
+        ],
+        "spam_offset": 0.017620326619272146,
+        "deviance": 2.867660985721159,
+        "degrees_of_freedom": 4,
+        "goodness_of_fit_p_value": 0.5802105975577541,
+        "model_mismatch_flag": false,
+        "confidence_method": "Approximate 95% profile-likelihood interval",
+        "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "job_id": "01a17013-83f6-76bf-a623-26360994c123",
+  "qiskit_status": "DONE",
+  "job_data": {
+    "id": "01a17013-83f6-76bf-a623-26360994c123",
+    "status": "completed",
+    "execution": {
+      "progress": {}
+    },
+    "compilation": {
+      "calibration_set_id": "a18a947f-0408-4628-81ea-1715637e434f"
+    },
+    "messages": [],
+    "errors": [],
+    "queue_position": null,
+    "timeline": [
+      {
+        "source": "iqm-server",
+        "status": "created",
+        "timestamp": "2026-10-24T22:41:29.610051Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "received",
+        "timestamp": "2026-10-24T22:41:29.950578Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "validation_started",
+        "timestamp": "2026-10-24T22:41:29.975616Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "validation_ended",
+        "timestamp": "2026-10-24T22:41:30.423409Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "compilation_started",
+        "timestamp": "2026-10-24T22:41:30.447620Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "compilation_ended",
+        "timestamp": "2026-10-24T22:41:30.864589Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "execution_started",
+        "timestamp": "2026-10-24T22:41:31.401837Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "execution_ended",
+        "timestamp": "2026-10-24T22:41:38.591689Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "post_processing_started",
+        "timestamp": "2026-10-24T22:41:38.603635Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "post_processing_ended",
+        "timestamp": "2026-10-24T22:41:38.782483Z"
+      },
+      {
+        "source": "iqm-station-control",
+        "status": "ready",
+        "timestamp": "2026-10-24T22:41:38.787681Z"
+      },
+      {
+        "source": "iqm-server",
+        "status": "completed",
+        "timestamp": "2026-10-24T22:41:39.376253Z"
+      }
+    ]
+  }
+}

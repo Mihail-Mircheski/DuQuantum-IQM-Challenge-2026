@@ -1,0 +1,27 @@
+{
+  "purpose": "Five-round follow-up of the corrected XX-DD memory experiment",
+  "bases": [
+    "Z",
+    "X"
+  ],
+  "rounds": [
+    5
+  ],
+  "shots_per_point": 500,
+  "total_authorized_shots": 1000,
+  "dd": "xx",
+  "prior_run": "../garnet-dd-qpu-20261024/xx",
+  "pulse_playlist_inspected": false,
+  "note": "Single-round-count data provide cumulative logical failure probability. Any combined per-round fit must validate compatibility with the prior experiment.",
+  "prior_fit_r5_predictions": {
+    "Z": {
+      "failure_probability": 0.31727322083159704,
+      "kind": "extrapolation from previously measured rounds 1, 2, 3; not a five-round measurement"
+    },
+    "X": {
+      "failure_probability": 0.323578956071804,
+      "kind": "extrapolation from previously measured rounds 1, 2, 3; not a five-round measurement"
+    }
+  },
+  "forecast_saved_utc": "2026-10-25T02:21:37.174997+00:00"
+}

@@ -1,0 +1,171 @@
+{
+  "source": "Independent simulator holdouts saved on 2026-10-24; candidate maps only, not reoptimized for feedback resets or verified on live hardware.",
+  "layouts": {
+    "Z": {
+      "10": "QB10",
+      "9": "QB11",
+      "3": "QB6",
+      "11": "QB5",
+      "8": "QB16",
+      "16": "QB15",
+      "18": "QB9",
+      "12": "QB4",
+      "17": "QB14",
+      "1": "QB12",
+      "2": "QB7",
+      "5": "QB2",
+      "13": "QB1",
+      "15": "QB19",
+      "14": "QB20",
+      "19": "QB8",
+      "25": "QB13"
+    },
+    "X": {
+      "10": "QB10",
+      "9": "QB9",
+      "3": "QB14",
+      "11": "QB15",
+      "8": "QB4",
+      "16": "QB5",
+      "18": "QB11",
+      "12": "QB16",
+      "17": "QB6",
+      "1": "QB8",
+      "2": "QB13",
+      "5": "QB19",
+      "13": "QB20",
+      "15": "QB2",
+      "14": "QB1",
+      "19": "QB12",
+      "25": "QB7"
+    }
+  },
+  "selection": {
+    "Z": {
+      "index": 2,
+      "holdout": {
+        "baseline": {
+          "shots": 100000,
+          "failures": 5597,
+          "failure_probability": 0.05597,
+          "ci95": [
+            0.05456229752442535,
+            0.05741181562433515
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 12679245784909816615,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.20115,
+          "shots_with_detection_events": 84091,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        "candidate": {
+          "shots": 100000,
+          "failures": 5181,
+          "failure_probability": 0.05181,
+          "ci95": [
+            0.05045340111373585,
+            0.05320103163212135
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 17632974359236343210,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.20773,
+          "shots_with_detection_events": 83502,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        "baseline_index": 3,
+        "candidate_index": 2,
+        "recommended_index": 2,
+        "one_sided_fisher_p_value": 1.977147846961507e-05,
+        "decision": "Candidate improved in independent holdout under this model"
+      },
+      "noise_provenance": {
+        "source_url": "https://resonance.iqm.tech/#garnet",
+        "file": "garnet-2026-10-24.json",
+        "sha256": "c5ab62169b5ba9e27ca393ebb079fcdba3df1207e24159466f3870b517a182da",
+        "observation_set_id": "21a722ad-dd22-427b-ab39-c06e5b094c2f",
+        "describes_id": "a18a947f-0408-4628-81ea-1715637e434f",
+        "created_timestamp": "2026-10-24T16:39:01.009280Z",
+        "prx_metric": "metrics.rb.prx.drag_crf_sx.*.fidelity:par=d2",
+        "cz_metric": "metrics.irb.cz.slepian_crf.*.fidelity:par=d2",
+        "readout_metric": "metrics.ssro.measure.constant.*.assignment_error",
+        "assumed_reset_flip_probability": 0.003,
+        "limitations": [
+          "RB/IRB infidelity is converted to a depolarizing Pauli approximation.",
+          "Readout asymmetry and correlations are replaced by symmetric flips.",
+          "Active-reset errors are assumed, not measured in this export.",
+          "T1/T2 idle noise is excluded because operation durations are unavailable.",
+          "Leakage, coherent errors, crosstalk and measurement disturbance are excluded.",
+          "Native Clifford decomposition is explicit and unoptimized; it is not an IQM transpiler output.",
+          "A simulation result is not a prediction verified on Garnet hardware.",
+          "Confidence intervals cover sampling/fit uncertainty; calibration and model uncertainty are not propagated."
+        ],
+        "noise_scale": 1.0
+      }
+    },
+    "X": {
+      "index": 1,
+      "holdout": {
+        "baseline": {
+          "shots": 100000,
+          "failures": 6471,
+          "failure_probability": 0.06471,
+          "ci95": [
+            0.06320187932905964,
+            0.06625156235849293
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 12679245784909816615,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.1458,
+          "shots_with_detection_events": 84693,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        "candidate": {
+          "shots": 100000,
+          "failures": 6200,
+          "failure_probability": 0.062,
+          "ci95": [
+            0.06052208882810686,
+            0.0635115610585159
+          ],
+          "confidence_method": "95% Wilson binomial interval",
+          "seed": 10860793996035051708,
+          "batch_size": 8192,
+          "raw_observable_flip_fraction": 0.16812,
+          "shots_with_detection_events": 84218,
+          "decoder": "PyMatching MWPM using the matching circuit DEM"
+        },
+        "baseline_index": 3,
+        "candidate_index": 1,
+        "recommended_index": 1,
+        "one_sided_fisher_p_value": 0.006597356721856414,
+        "decision": "Candidate improved in independent holdout under this model"
+      },
+      "noise_provenance": {
+        "source_url": "https://resonance.iqm.tech/#garnet",
+        "file": "garnet-2026-10-24.json",
+        "sha256": "c5ab62169b5ba9e27ca393ebb079fcdba3df1207e24159466f3870b517a182da",
+        "observation_set_id": "21a722ad-dd22-427b-ab39-c06e5b094c2f",
+        "describes_id": "a18a947f-0408-4628-81ea-1715637e434f",
+        "created_timestamp": "2026-10-24T16:39:01.009280Z",
+        "prx_metric": "metrics.rb.prx.drag_crf_sx.*.fidelity:par=d2",
+        "cz_metric": "metrics.irb.cz.slepian_crf.*.fidelity:par=d2",
+        "readout_metric": "metrics.ssro.measure.constant.*.assignment_error",
+        "assumed_reset_flip_probability": 0.003,
+        "limitations": [
+          "RB/IRB infidelity is converted to a depolarizing Pauli approximation.",
+          "Readout asymmetry and correlations are replaced by symmetric flips.",
+          "Active-reset errors are assumed, not measured in this export.",
+          "T1/T2 idle noise is excluded because operation durations are unavailable.",
+          "Leakage, coherent errors, crosstalk and measurement disturbance are excluded.",
+          "Native Clifford decomposition is explicit and unoptimized; it is not an IQM transpiler output.",
+          "A simulation result is not a prediction verified on Garnet hardware.",
+          "Confidence intervals cover sampling/fit uncertainty; calibration and model uncertainty are not propagated."
+        ],
+        "noise_scale": 1.0
+      }
+    }
+  }
+}

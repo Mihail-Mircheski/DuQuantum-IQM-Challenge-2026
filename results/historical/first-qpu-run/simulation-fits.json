@@ -1,0 +1,66 @@
+{
+  "Z": {
+    "challenge": {
+      "model": "challenge",
+      "epsilon_per_round": 0.01925466690916965,
+      "epsilon_ci95": [
+        0.018853649824748738,
+        0.019661981209855867
+      ],
+      "spam_offset": 0.0,
+      "deviance": 150.44289823477447,
+      "degrees_of_freedom": 5,
+      "goodness_of_fit_p_value": 1.0746010024160875e-30,
+      "model_mismatch_flag": true,
+      "confidence_method": "Approximate 95% profile-likelihood interval",
+      "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+    },
+    "spam_diagnostic": {
+      "model": "spam_offset",
+      "epsilon_per_round": 0.016218344806983444,
+      "epsilon_ci95": [
+        0.01559222503222635,
+        0.016848270637612614
+      ],
+      "spam_offset": 0.013378691058607752,
+      "deviance": 2.6274602963676443,
+      "degrees_of_freedom": 4,
+      "goodness_of_fit_p_value": 0.6219664396492646,
+      "model_mismatch_flag": false,
+      "confidence_method": "Approximate 95% profile-likelihood interval",
+      "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+    }
+  },
+  "X": {
+    "challenge": {
+      "model": "challenge",
+      "epsilon_per_round": 0.0229542598012857,
+      "epsilon_ci95": [
+        0.022506715434111188,
+        0.023408535368744977
+      ],
+      "spam_offset": 0.0,
+      "deviance": 159.01637388135714,
+      "degrees_of_freedom": 5,
+      "goodness_of_fit_p_value": 1.603917549815513e-32,
+      "model_mismatch_flag": true,
+      "confidence_method": "Approximate 95% profile-likelihood interval",
+      "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+    },
+    "spam_diagnostic": {
+      "model": "spam_offset",
+      "epsilon_per_round": 0.019477052128187344,
+      "epsilon_ci95": [
+        0.0187798723518625,
+        0.020178510096340994
+      ],
+      "spam_offset": 0.015139541731994595,
+      "deviance": 2.9146068776899483,
+      "degrees_of_freedom": 4,
+      "goodness_of_fit_p_value": 0.5722159332270376,
+      "model_mismatch_flag": false,
+      "confidence_method": "Approximate 95% profile-likelihood interval",
+      "note": "The challenge fit assumes no preparation/readout offset; inspect the SPAM diagnostic and goodness of fit."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "calibration_set_id": "a18a947f-0408-4628-81ea-1715637e434f",
+  "checks": [
+    {
+      "name": "Z_r5_chunk0",
+      "cz_gates": 120,
+      "all_cz_native": true,
+      "measurements": 49,
+      "feedback_resets": 40,
+      "routing_swaps": 0
+    },
+    {
+      "name": "X_r5_chunk0",
+      "cz_gates": 120,
+      "all_cz_native": true,
+      "measurements": 49,
+      "feedback_resets": 40,
+      "routing_swaps": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "health": {
+    "operational_status": "online",
+    "health": {
+      "healthy": true,
+      "updated_at": "2026-10-25T02:40:21.683615Z"
+    }
+  },
+  "garnet": [
+    {
+      "id": "065d7600-6c9f-784d-8000-e3fd7c398f60",
+      "alias": "garnet",
+      "display_name": "IQM Garnet"
+    }
+  ]
+}
